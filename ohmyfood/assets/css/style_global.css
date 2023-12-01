@@ -1,7 +1,10 @@
 /* CSS de base (en mobile first) */
 /* Style global (commun aux différentes pages) */
 
-
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+}
 
 .header_one {
     display: flex;
@@ -100,7 +103,7 @@ main {
 
 .titre_menu {
 
-    margin-top: -8rem;
+    margin-top: -2rem;
     border-radius: 40px 40px 0px 0px;
     background-color: rgba(246, 246, 246, 1);
     position: relative;
@@ -111,10 +114,20 @@ main {
 
   
     font-family: 'shrikhand-Regular', 'cursive';
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-style: italic;
     font-weight: 400;
 
+
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+
+}
+.icon__heart{
+    width: 10%;
 }
 
 .container h4 {
@@ -136,19 +149,22 @@ main {
     left: 0;
     top: 10px;
 }
+.list{
+    margin-bottom: 20px;
+    padding: 20px; /* Ajout du padding pour une meilleure expérience sur de petits écrans */
 
+}
 .card_list li {
 
     position: relative;
     top: 35px;
-    right: 5%;
     background: white;
     display: flex;
     flex-direction: row;
     text-overflow: ellipsis;
     overflow: hidden;
     border-radius: 20px;
-    margin: 3rem;
+    margin: 1rem 0;
     box-shadow: 0rem 0rem 0px;
     list-style: none;
     animation: listItem 1s forwards;
@@ -171,7 +187,9 @@ main {
 .card_list .text__description,
 .card_list .prix {
 
-    padding: 1rem;
+    padding: 6px;
+    padding-right: 16px;
+    font-size: 11px;
     flex-direction: column;
     align-items: flex-start;
 }
@@ -196,6 +214,8 @@ main {
 
 .text__description h3 {
     
+    padding: 0;
+    font-size: 15px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -206,7 +226,7 @@ main {
     font-family: system-ui;
     padding: 0;
     font-weight: 300;
-    font-size: 1.5rem;
+    font-size: 13.5px;
     line-height: 25px;
     white-space: nowrap;
     
@@ -218,8 +238,7 @@ main {
 .text__description p li:hover,
 .prix {
 
-    margin-right: 60px;
-    
+    margin-bottom: 43px;
     text-overflow: ellipsis;
 }
 
@@ -230,16 +249,17 @@ main {
 
 .valid_prix {
 
+    background: linear-gradient(170deg);
     display: flex;
     align-items: center;
     background-color: #99e2d0;
     color: #69f3b7;
     font-size: 20px;
-    padding: 39.5px 23px;
+    padding: 28.5px 8px;
     border-radius: 0 15px 15px 0;
     right: 0;
     top: 0;
-    margin-right: -74px;
+    margin-right: -45px;
     transition: .5s ease-in-out;
 }
 .valid_prix i{

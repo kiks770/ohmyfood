@@ -34,7 +34,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: loader 4.5s ease-out both;
+    animation: loader .5s ease-out both;
 }
 
 @keyframes loader {
@@ -108,7 +108,7 @@ input::placeholder {
 
 .search_bar {
 
-    padding: 2rem;
+    /* padding: 2rem; */
     text-align: center;
     background: #f5f5f5e3;
 
@@ -129,28 +129,76 @@ p {
     margin-top: 0;
 }
 
-.btn {
+.text-box{
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.btn:link,
+.btn:visited {
     background: linear-gradient(170deg, #ff79da, #9356dc);
     color: white;
-    font-size: large;
-    padding: 1rem;
-    border-radius: 50px;
-    border: none;
-    margin-bottom: 7vw;
-    box-shadow: 4px 4px 2px lightgrey;
-    width: 60vw;
-    box-sizing: border-box;
-    max-width: 250px;
-    align-self: center;
-    transition: 2s;
-    cursor: pointer;
-   }
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    font-family: arial;
+}
 
-   .btn:hover {
-    background-color: #fff;
-    box-shadow: 0.25rem 0.25rem 10px rgba(0,0,0,.5);
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
 
-   }
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+    background-color: rgb(223, 28, 191), 255, 255;
+    color: rgb(217, 49, 217);
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBottom 5s ease-out;
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
 /* Menu */
 .list {
 
@@ -450,14 +498,15 @@ h5 {
     .restaurant {
 
         margin-left: 20px;
+        display: flex;
 
     }
 
     .card_resto {
-
+/* 
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr; */
         gap: 14px 70px;
         padding: 25px 0 0 0;
         width: 90%;
